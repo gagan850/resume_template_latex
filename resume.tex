@@ -1,0 +1,119 @@
+\documentclass{article}
+
+%packages
+\usepackage[margin=0.5in]{geometry}
+\usepackage{hyperref}
+\usepackage{color}
+\usepackage[explicit,noindentafter]{titlesec}
+\usepackage{sectsty}
+\usepackage[fleqn]{amsmath}
+\usepackage[T1]{fontenc}
+
+\definecolor{theme}{RGB}{42, 123, 164}
+\definecolor{gray}{RGB}{128, 128, 128}
+  
+\sectionfont{\Large \textcolor{theme}}
+\subsectionfont{\large \textcolor{black}}
+\subsubsectionfont{\small \textcolor{gray}}
+
+
+
+\newcommand\sectionstart[0]{\textcolor{theme}{\rule{\linewidth}{0.1mm}} \vspace{-20pt}}
+\newcommand\rsectionstart[1]{\section*{\hspace{-15pt}#1}\vspace{-19pt}\sectionstart}
+\newcommand\rsectionend[0]{\vspace{0pt}}
+
+\newcommand\edu[3]{\subsection*{#1\hspace{10mm} #2 \hfill \textcolor{gray}{#3}}}
+\newcommand\edusub[1]{\subsubsection*{\hspace{25mm}#1} \vspace{5pt}}
+
+\newcommand\project[3]{\subsection*{#1 \hfill \textcolor{gray}{#2\ -\ #3}}}
+\newcommand\projectsub[1]{\subsubsection*{#1}\vspace{5pt}}
+
+\newcommand\wexp[3]{\subsection*{#1 \hfill \textcolor{gray}{#2\ -\ #3}}}
+\newcommand\wexpsub[1]{\subsubsection*{#1}\vspace{5pt}}
+
+\newcommand\skillsplitter[0]{\textcolor{theme}{|\ }}
+
+\newcommand\skillsectionstart[0]{\begin{itemize}\vspace{10pt}}
+\newcommand\skillsectionend[0]{\end{itemize}}
+
+\makeatletter
+\newcommand{\skill}[2]{\item {\large{ \bf {#1} : \normalfont {#2}}} \checknextskill}
+\newcommand{\checknextskill}{\@ifnextchar\bgroup{\addnextskill}{}}
+\newcommand{\addnextskill}[1]{ \large \normalfont \skillsplitter #1\@ifnextchar\bgroup{\addnextskill}{}}
+
+\newcommand\achievementsectionstart[0]{\begin{itemize}\vspace{10pt}}
+\newcommand\achievementsectionend[0]{\end{itemize}}
+\newcommand\achievement[1]{\item {\large #1}}
+
+\newcommand\contributionsectionstart[0]{\begin{itemize}\vspace{10pt}}
+\newcommand\contributionsectionend[0]{\end{itemize}}
+\newcommand\contribution[2]{\item \large {#1 : \textcolor{theme}{\underline{\url{#2}}}}}
+
+\newcommand\name[1]{
+\begin{center}
+{\huge \bf \textcolor{theme} {#1}}
+\textcolor{theme}{\rule{\linewidth}{0.5mm}}
+\end{center}
+}
+
+\newcommand\contact[3]{
+
+\begin{center}
+\textcolor{theme}{\underline{\url{#1}}}\ \skillsplitter
+  #2 \skillsplitter \textcolor{theme}{\underline{\url{#3}}}
+  \end{center}
+
+}
+
+\begin{document}
+
+\name{GAGANDEEP BANSAL}
+\contact{bansalgagandeep850@gmail.com}{+91-9899911412}{https://www.linkedin.com/in/gaganbansal1/}
+  
+\rsectionstart{Education}
+\edu{2014}{Guru Nanak Dev University, Amritsar}{CGPA: 8.78}
+\edusub{Bachelor of Technology in Computer Science}
+\edu{2010}{St. Kabir Convent School, Bathinda}{Score: 78\%}
+\edusub{+2, Non Medical}
+\edu{2008}{M.S.D.Senior.Secondary Public School, Bathinda}{Score: 78\%}
+\edusub{Metriculation}
+\rsectionend
+
+\rsectionstart{Key Projects}
+\project{AMS}{Sep 2017}{Present}
+\projectsub{Nagarro internal project}
+\project{RMC-Cobra}{Sep 2016}{Sep 2017}
+\projectsub{XYZ Company}
+\project{RMC-Classic}{Apr 2014}{Sep 2016}
+\projectsub{XYZ Company}
+\rsectionend
+
+\rsectionstart{Work Experience}
+\wexp{Senior Developer}{Apr 2014}{Present}
+\wexpsub{Nagarro, Gurgaon}
+\rsectionend
+
+\rsectionstart{Skills}
+\skillsectionstart
+\skill{Core}{Data Structure}{Algorithms}{Design Pattern}
+\skill{Languages}{Java}{C}{Javascript}
+\skill{Databases}{MongoDB}{Oracle 12c}
+\skill{Web Stack}{Spring MVC}{Spring Boot}
+\skill{Framworks}{AngularJS}{Angular 2}
+\skillsectionend
+\rsectionend
+
+\rsectionstart{Awards and Achievements}
+\achievementsectionstart
+\achievement{Oracle Certified Professional Java Programmer}
+\achievement{Among Top 25 Students of India in National Programming League 2013}
+\achievementsectionend
+\rsectionend
+
+\rsectionstart{Open Source Contribution}
+\contributionsectionstart
+\contribution{Github}{https://github.com/gagan850}
+\contribution{StackOverflow}{https://stackoverflow.com/users/3682312/gagan-bansal}
+\contributionsectionend
+\rsectionend
+\end{document}
